@@ -26,14 +26,14 @@ def one_token_confidence(question: str, answer: str) -> float:
     probabilities = text_with_token_probabilities.probabilities[0]
     yes_tokens = ["true", "tr", " true"]
     no_tokens = ["false", "fa", "fal", " false"]
-    correct_probability = joint_probability(probabilities, yes_tokens)
-    incorrect_probability = joint_probability(probabilities, no_tokens)
+    correct_probability = probabilities_sum(probabilities, yes_tokens)
+    incorrect_probability = probabilities_sum(probabilities, no_tokens)
     if correct_probability == 0 and incorrect_probability == 0:
         return 0.5
     return correct_probability / (correct_probability + incorrect_probability)
 
 
-def joint_probability(
+def probabilities_sum(
         probabilities: Dict[str, float],
         tokens: List[str]
 ) -> float:
