@@ -1,36 +1,44 @@
 How to read the results:
 
 Bucket - this is the bucket of probabilities that the given answer is correct (not a hallucination).
+
 Average - this is the percentage (divided by 100) of the answers that were correct in the given bucket.
+
 Samples - the number of samples in which the algorithm has decided probability that falls to the given bucket.
 
-Simple:
+# Simple method
 
-Bucket 0.0-0.1, average: 0.37, samples: 1258
-Bucket 0.1-0.2 - empty, samples: 0
-Bucket 0.2-0.3 - empty, samples: 0
-Bucket 0.3-0.4 - empty, samples: 0
-Bucket 0.4-0.5 - empty, samples: 0
-Bucket 0.5-0.6, average: 0.0, samples: 3
-Bucket 0.6-0.7 - empty, samples: 0
-Bucket 0.7-0.8, average: 0.1, samples: 48
-Bucket 0.8-0.9, average: 0.07, samples: 43
-Bucket 0.9-1.0, average: 0.8, samples: 648
+Simple method is asking the LLM to output the confidence as a number.
 
+| Bucket       | Average | Samples |
+|--------------|---------|---------|
+| 0.0-0.1      | 0.37    | 1258    |
+| 0.1-0.2      | -       | 0       |
+| 0.2-0.3      | -       | 0       |
+| 0.3-0.4      | -       | 0       |
+| 0.4-0.5      | -       | 0       |
+| 0.5-0.6      | 0.0     | 3       |
+| 0.6-0.7      | -       | 0       |
+| 0.7-0.8      | 0.1     | 48      |
+| 0.8-0.9      | 0.07    | 43      |
+| 0.9-1.0      | 0.8     | 648     |
 
-One token:
+# One token method
 
-Bucket 0.0-0.1, average: 0.01, samples: 80
-Bucket 0.1-0.2, average: 0.02, samples: 134
-Bucket 0.2-0.3, average: 0.03, samples: 149
-Bucket 0.3-0.4, average: 0.13, samples: 152
-Bucket 0.4-0.5, average: 0.16, samples: 164
-Bucket 0.5-0.6, average: 0.2, samples: 158
-Bucket 0.6-0.7, average: 0.45, samples: 139
-Bucket 0.7-0.8, average: 0.48, samples: 186
-Bucket 0.8-0.9, average: 0.77, samples: 244
-Bucket 0.9-1.0, average: 0.97, samples: 594
+One token method is the method introduced in this repository.
 
+| Bucket       | Average | Samples |
+|--------------|---------|---------|
+| 0.0-0.1      | 0.01    | 80      |
+| 0.1-0.2      | 0.02    | 134     |
+| 0.2-0.3      | 0.03    | 149     |
+| 0.3-0.4      | 0.13    | 152     |
+| 0.4-0.5      | 0.16    | 164     |
+| 0.5-0.6      | 0.2     | 158     |
+| 0.6-0.7      | 0.45    | 139     |
+| 0.7-0.8      | 0.48    | 186     |
+| 0.8-0.9      | 0.77    | 244     |
+| 0.9-1.0      | 0.97    | 594     |
 
 Conclusions (might depend on the prompt):
 1. Simple method of just asking the LLM to output the confidence works a little bit, but not very well.
