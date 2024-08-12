@@ -1,12 +1,18 @@
+How to read the results:
+
+Bucket - this is the bucket of probabilities that the given answer is correct (not a hallucination).
+Average - this is the percentage (divided by 100) of the answers that were correct in the given bucket.
+Samples - the number of samples in which the algorithm has decided probability that falls to the given bucket.
+
 Simple:
 
 Bucket 0.0-0.1, average: 0.37, samples: 1258
-Bucket 0.1-0.2 - empty
-Bucket 0.2-0.3 - empty
-Bucket 0.3-0.4 - empty
-Bucket 0.4-0.5 - empty
+Bucket 0.1-0.2 - empty, samples: 0
+Bucket 0.2-0.3 - empty, samples: 0
+Bucket 0.3-0.4 - empty, samples: 0
+Bucket 0.4-0.5 - empty, samples: 0
 Bucket 0.5-0.6, average: 0.0, samples: 3
-Bucket 0.6-0.7 - empty
+Bucket 0.6-0.7 - empty, samples: 0
 Bucket 0.7-0.8, average: 0.1, samples: 48
 Bucket 0.8-0.9, average: 0.07, samples: 43
 Bucket 0.9-1.0, average: 0.8, samples: 648
