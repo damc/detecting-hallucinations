@@ -80,3 +80,32 @@ Conclusions (might depend on the prompt):
 Additional info:
 1. The bias can be the result of the prompt (with a different prompt, there might be no bias or a different bias).
 2. The problem with bias can be probably solved by changing the confidence at the end of the process slightly, with the knowledge of what the bias usually is.
+
+# Running the project
+
+Firstly, before you do anything, you need to set OPENAI_API_KEY environment 
+variable to your OpenAI API key.
+
+Secondly, you need to install the required packages from requirements.txt. 
+If you have `openai` package installed then better do that in the virtual 
+environment because it uses TextBridge package which uses an old version of 
+OpenAI package which might conflict with your package, if you have a new 
+version of `openai` installed.
+
+Then, you can run the project like this:
+
+```commandline
+python3 main.py
+```
+
+That will ask you for a question and answer and will output the confidence 
+that the answer is correct.
+
+But if you want to test the entire batch, then you need to run the tests 
+from the `tests` folder. `test_one_token.py` contains the tests for One Token 
+method. `tests_simple.py` contains the tests for the simple method of asking 
+the model to output the confidence (for comparison). You can run it with 
+PyTest for example.
+
+There are two methods of testing it - error and bucket. Check the docstrings 
+in the file, if you want to know what those methods test exactly.
