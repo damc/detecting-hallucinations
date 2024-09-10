@@ -10,7 +10,7 @@ def test_one_token_error():
 
     For example, if the returned confidence that answer is correct is
     0.4, and the answer is incorrect (is a hallucination), then the
-    error is 0.4.
+    error is 0.4 because |0.4 - 0| = 0.4.
     """
     error_test(one_token_confidence, "One Token")
 
