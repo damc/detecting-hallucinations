@@ -2,7 +2,9 @@ How to read the results:
 
 Bucket - this is the bucket of probabilities that the given answer is correct (not a hallucination).
 
-Average - this is the percentage (divided by 100) of the answers that were correct in the given bucket.
+Average - this is the percentage (divided by 100) of the answers that were 
+correct in the given bucket. Ideally, it should be in the middle of the 
+probability bucket (for example. it should be 0.25 for 0.2-0.3 bucket).
 
 Samples - the number of samples in which the algorithm has decided probability that falls to the given bucket.
 
@@ -48,4 +50,5 @@ Conclusions (might depend on the prompt):
 
 Additional info:
 1. The bias can be the result of the prompt (with a different prompt, there might be no bias or a different bias).
-2. The bias can be probably solved by adjusting the confidence.
+2. The bias can be probably solved by adjusting the confidence, with the 
+   knowledge of the bias.
