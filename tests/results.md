@@ -4,13 +4,15 @@ Bucket - this is the bucket of probabilities that the given answer is correct (n
 
 Average - this is the percentage (divided by 100) of the answers that were 
 correct in the given bucket. Ideally, it should be in the middle of the 
-probability bucket (for example. it should be 0.25 for 0.2-0.3 bucket).
+probability bucket (for example, it should be 0.25 for 0.2-0.3 bucket).
 
 Samples - the number of samples in which the algorithm has decided probability that falls to the given bucket.
 
 # Simple method
 
 Simple method is asking the LLM to output the confidence as a number.
+
+Simple method is NOT one token method and is included here only for comparison.
 
 | Bucket       | Average | Samples |
 |--------------|---------|---------|
@@ -42,7 +44,9 @@ One token method is the method introduced in this repository.
 | 0.8-0.9      | 0.77    | 244     |
 | 0.9-1.0      | 0.97    | 594     |
 
-Conclusions (might depend on the prompt):
+# Conclusions
+
+Conclusions (might depend on the prompt and/or the model):
 1. Simple method of just asking the LLM to output the confidence works a little bit, but not very well.
 2. Simple method is too confident, almost always giving probability from 0% to 10% or from 70% to 100%.
 3. One token method works well.
