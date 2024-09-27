@@ -46,7 +46,8 @@ One token method is the method introduced in this repository.
 
 # Conclusions
 
-Conclusions (might depend on the prompt and/or the model):
+Conclusions (might depend on the prompt and/or the model and/or the softmax 
+temperature):
 1. Simple method of just asking the LLM to output the confidence works a little bit, but not very well.
 2. Simple method is too confident, almost always giving probability from 0% to 10% or from 70% to 100%.
 3. One token method works well.

@@ -71,7 +71,7 @@ In this case, the next generated token will be something like "True" or "Tr", if
 
 # Conclusions from testing the method empirically
 
-Conclusions (might depend on the prompt):
+Conclusions (might depend on the prompt and softmax temperature setting):
 1. Simple method of just asking the LLM to output the confidence works a little bit, but not very well.
 2. Simple method is too confident, almost always giving probability from 0% to 10% or from 70% to 100%.
 3. One token method works well.
